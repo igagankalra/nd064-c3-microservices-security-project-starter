@@ -1,0 +1,46 @@
+# Docker STRIDE 
+
+1. Spoofing - Client traffic from the Docker client to the  daemon or registry could be spoofed by a malicious party. 
+
+2. Tampering - Attacker gets control of the client. This leads to tampering of the Dockerfile that’s used to build the image affecting the image which can be used by other people.
+
+3. Denial of Service - Attacker can launch a Excessive traffic from the client could overwhelm the daemon and cause memory overusage issues which leads to crash of the system.
+
+4. Information Disclosure -  Attacker may expose sensitive information such as secrets that could impact the security of the system/user/company.
+
+5. Elevation of Privilege - Container image can be elevated via the --privileged flag
+
+
+
+# k8s  STRIDE 
+
+1. Spoofing - The man in the middle attacks due to configuration mismatch when apiserver cannot verify kubelets ssl certificate.
+
+2. Tampering - The configuration of etcd may be tampered with by an attacker, modifying vital system-level configurations such as pod specs.
+
+3. Information Disclosure - Sensitive information may be exposed via the etcd key-value store which can be used to make unwanted request and access data. 
+
+4.  Elevation of Privilege - privilege can be abused by using the privileged flag while spunning the containers/pods.
+
+5. Denial of Service - Attacker can launch a Excessive traffic causing cluster to starve for the legtimate requests to be processed.
+
+
+
+Docker-bench Run Results and Analysis
+From the failed findings, select and document 3 findings from the Docker-bench results that 
+you want to harden based on the 5 attack surface areas you identified in Step 1. At 
+least 1 of the 3 hardened findings should be different from the ones mentioned in the 
+exercise (i.e. 5.10, 5.14, and 5.22).
+
+*1.2.3 You should add rules for the Docker daemon.
+
+*1.2.4 You should add a rule for the /var/lib/docker directory.
+
+*1.2.5 You should add a rule for the /etc/docker directory.
+
+
+*1.2.6 If the file exists, a rule for it should be added.
+
+
+*1.2.7 Usage: grep [OPTION]... PATTERN [FILE]...
+
